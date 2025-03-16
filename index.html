@@ -6,14 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechScribe - Home</title>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BGN0FY7K5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1BGN0FY7K5');
+    </script>
+
 </head>
 
 <body>
     <!-- Navbar -->
     <header class="fade-in">
         <div class="logo">
-            <span style="color: #00D26A; font-weight: bold;">Tech</span><span
-                style="color: #A8C7FA; font-weight: bold;">Scribe</span>
+            <span style="color: #00D26A; font-weight: bold;">Tech</span><span style="color: #A8C7FA; font-weight: bold;">Scribe</span>
         </div>
 
         <button class="hamburger" aria-label="Toggle Menu">
@@ -31,11 +40,8 @@
         </nav>
     </header>
 
-
     <section id="hero" class="fade-in">
-        <h1>Welcome to <span style="color: #00D26A; font-weight: bold;">Tech</span><span
-                style="color: #A8C7FA; font-weight: bold;">Scribe</span></h1>
-
+        <h1>Welcome to <span style="color: #00D26A; font-weight: bold;">Tech</span><span style="color: #A8C7FA; font-weight: bold;">Scribe</span></h1>
         <p>Find well-organized notes, question papers, and study materials all in one place.</p>
         <a href="#year-selection" class="button">Explore Notes</a>
     </section>
@@ -66,17 +72,13 @@
         </div>
     </section>
 
-    <section id="about" class="fade-in"
-        style="text-align: center; padding: 50px 20px; background-color: #121212; color: #E0E0E0;">
+    <section id="about" class="fade-in" style="text-align: center; padding: 50px 20px; background-color: #121212; color: #E0E0E0;">
         <h1 style="color: #A8C7FA; font-size: 2.5rem; margin-bottom: 15px;">About Us</h1>
-        <p style="font-size: 1.2rem; max-width: 700px; margin: auto;">TechScribe is dedicated to simplifying academics
-            by providing well-organized notes, previous year question papers, and seamless navigation for students.</p>
+        <p style="font-size: 1.2rem; max-width: 700px; margin: auto;">TechScribe is dedicated to simplifying academics by providing well-organized notes, previous year question papers, and seamless navigation for students.</p>
 
         <div class="details" style="margin-top: 30px;">
             <h3 style="color: #FFD580; font-size: 1.8rem; margin-bottom: 10px;">🎯 Our Goal</h3>
-            <p style="font-size: 1.1rem; max-width: 700px; margin: auto;">To create a one-stop platform where VTU
-                students can easily access quality study materials, saving time and improving their learning experience.
-            </p>
+            <p style="font-size: 1.1rem; max-width: 700px; margin: auto;">To create a one-stop platform where VTU students can easily access quality study materials, saving time and improving their learning experience.</p>
 
             <h3 style="color: #FFD580; font-size: 1.8rem; margin-top: 30px;">📖 What we offer</h3>
             <ul style="list-style: none; padding: 0; font-size: 1.1rem; max-width: 700px; margin: auto;">
@@ -86,31 +88,18 @@
                 <li style="margin: 8px 0;">✅ Free and accessible for all VTU students</li>
             </ul>
         </div>
-
-        <!-- <a href="#upload" class="button"
-            style="display: inline-block; margin-top: 30px; padding: 12px 25px; background-color: #00D26A; color: #121212; font-size: 1.2rem; font-weight: bold; text-decoration: none; border-radius: 8px;">Contribute
-            Notes</a> -->
     </section>
-
-
 
     <section id="contact">
         <h1>Contact Us</h1>
-
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <!-- Web3Forms API Key -->
             <input type="hidden" name="access_key" value="b87bc94e-ac71-4e81-bd04-4b0a70c3773a">
-
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
-
             <button type="submit" class="button">Send Message</button>
         </form>
 
-        
-
-        <!-- Custom Popup -->
         <div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
                                background: #1E1E1E; color: #fff; padding: 20px; border-radius: 8px; text-align: center;
                                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);">
@@ -123,44 +112,6 @@
         </div>
     </section>
 
-    <script>
-        document.getElementById("contact-form").addEventListener("submit", async function (event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const formData = new FormData(this);
-
-            try {
-                const response = await fetch(this.action, {
-                    method: "POST",
-                    body: formData
-                });
-
-                const result = await response.json();
-                if (result.success) {
-                    document.getElementById("popup").style.display = "block"; // Show popup
-                    this.reset(); // Clear form after successful submission
-                } else {
-                    alert("Error submitting the form.");
-                }
-            } catch (error) {
-                alert("Submission failed. Please try again.");
-            }
-        });
-    </script>
-
-
-
-
-
-
-
-    <footer class="fade-in">
-        <!-- <p>Contact us at: <a href="mailto:support@notes.com">support@notes.com</a></p> -->
-        <p>
-            <!-- <a href="#">Facebook</a> | <a href="#">Twitter</a> -->
-        </p>
-        <p>© 2025 TechScribe. All rights reserved.</p>
-    </footer>
     <script src="scripts.js"></script>
 </body>
 
