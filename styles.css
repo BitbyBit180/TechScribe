@@ -1,0 +1,665 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Navbar Styles */
+header {
+    background-color: #1A1A1A;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #A8C7FA;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #FFD580;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: #FFD580;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #00D26A;
+}
+
+/* Hero Section */
+#hero {
+    background-color: #121212;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 2.8rem;
+    color: #A8C7FA;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.1rem;
+    color: #E0E0E0;
+    margin-bottom: 25px;
+}
+
+.button {
+    background-color: #00D26A;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: #FFA500;
+    transform: scale(1.05);
+}
+
+/* Year Selection Section */
+#year-selection {
+    background-color: #121212;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#year-selection h1 {
+    font-size: 2.2rem;
+    color: #A8C7FA;
+    margin-bottom: 30px;
+}
+
+.year-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.note-card {
+    background-color: #1E1E1E;
+    padding: 20px;
+    border-radius: 8px;
+    width: calc(25% - 20px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.note-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.note-card h2 {
+    color: #A8C7FA;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.note-card p {
+    color: #E0E0E0;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+/* About Section */
+#about {
+    background-color: #121212;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#about h1 {
+    font-size: 2.2rem;
+    color: #A8C7FA;
+    margin-bottom: 30px;
+}
+
+.mission h2, .offer h2 {
+    font-size: 1.6rem;
+    color: #FFD580;
+    margin: 20px 0;
+}
+
+.offer ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.offer li {
+    font-size: 1.1rem;
+    color: #E0E0E0;
+    margin-bottom: 10px;
+}
+
+.offer li::before {
+    content: "•";
+    color: #00D26A;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Year Notes Section */
+#year-notes {
+    background-color: #121212;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#year-notes h1 {
+    font-size: 2.2rem;
+    color: #A8C7FA;
+    margin-bottom: 25px;
+}
+
+.filter-container {
+    margin-bottom: 25px;
+}
+
+#subject-filter {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 15px;
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#subject-filter:hover {
+    background-color: #00D26A;
+}
+
+#subject-filter option {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+}
+
+.notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.note-item {
+    background-color: #1E1E1E;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.note-item:hover {
+    transform: translateY(-5px);
+}
+
+.note-item h2 {
+    color: #A8C7FA;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: left;
+}
+
+.pdf-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.pdf-card {
+    background-color: #292929;
+    padding: 15px;
+    border-radius: 8px;
+    width: calc(33.33% - 10px);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pdf-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.pdf-card .pdf-preview {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #333333;
+}
+
+.pdf-card h3 {
+    color: #E0E0E0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #121212;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#contact h1 {
+    font-size: 2.2rem;
+    color: #A8C7FA;
+    margin-bottom: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    padding: 10px 15px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #00D26A;
+    outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #888888;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.social-links {
+    background-color: #1A1A1A;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.social-links a {
+    color: #FFD580;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #00D26A;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1A1A1A;
+    padding: 20px 0;
+    text-align: center;
+    color: #E0E0E0;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+footer a {
+    color: #FFD580;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #00D26A;
+}
+
+#no-results {
+    color: #FF4D6D;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+
+/* Large Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .nav-menu ul {
+        gap: 15px;
+    }
+
+    #hero {
+        padding: 60px 15px;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .year-cards .note-card {
+        width: calc(33.33% - 15px);
+    }
+
+    .pdf-card {
+        width: calc(50% - 10px);
+    }
+
+    .pdf-card .pdf-preview {
+        height: 100px;
+    }
+}
+
+/* Tablets and Below (up to 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+        position: relative;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #1A1A1A;
+        padding: 60px 20px 20px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+    }
+
+    .nav-menu.active {
+        transform: translateX(0);
+        animation: slideIn 0.3s ease-in-out;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        font-size: 1.2rem;
+        padding: 10px;
+        display: block;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+        background-color: #00D26A;
+        color: #fff;
+    }
+
+    #hero, #year-selection, #about, #contact, #year-notes {
+        padding: 40px 15px;
+    }
+
+    #hero h1, #year-selection h1, #about h1, #contact h1, #year-notes h1 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    .button {
+        padding: 8px 18px;
+        font-size: 1rem;
+    }
+
+    .year-cards .note-card {
+        width: calc(50% - 15px);
+    }
+
+    .note-item h2 {
+        font-size: 1.5rem;
+    }
+
+    .pdf-card {
+        width: calc(50% - 10px);
+    }
+
+    .pdf-card .pdf-preview {
+        height: 90px;
+    }
+
+    .pdf-card h3 {
+        font-size: 1.1rem;
+    }
+
+    form {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+
+/* Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .hamburger {
+        padding: 3px;
+    }
+
+    .hamburger span {
+        width: 20px;
+        height: 2px;
+        margin: 4px 0;
+    }
+
+    .nav-menu {
+        width: 200px;
+        padding: 50px 15px 15px;
+    }
+
+    .nav-menu a {
+        font-size: 1.1rem;
+        padding: 8px;
+    }
+
+    #hero {
+        padding: 40px 10px;
+    }
+
+    #hero h1 {
+        font-size: 1.8rem;
+    }
+
+    #hero p {
+        font-size: 0.9rem;
+    }
+
+    #year-selection, #about, #contact, #year-notes {
+        padding: 30px 10px;
+    }
+
+    #year-selection h1, #about h1, #contact h1, #year-notes h1 {
+        font-size: 1.6rem;
+    }
+
+    .year-cards .note-card {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .note-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .note-card p {
+        font-size: 0.9rem;
+    }
+
+    .note-item {
+        padding: 15px;
+    }
+
+    .note-item h2 {
+        font-size: 1.4rem;
+    }
+
+    .pdf-cards {
+        gap: 10px;
+    }
+
+    .pdf-card {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .pdf-card .pdf-preview {
+        height: 80px;
+    }
+
+    .pdf-card h3 {
+        font-size: 1rem;
+    }
+
+    .button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    #subject-filter {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    .mission h2, .offer h2 {
+        font-size: 1.4rem;
+    }
+
+    .offer li {
+        font-size: 1rem;
+    }
+
+    input, textarea {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    footer {
+        padding: 15px 0;
+        font-size: 0.8rem;
+    }
+
+    #no-results {
+        font-size: 1rem;
+    }
+}

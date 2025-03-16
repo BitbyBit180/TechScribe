@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - 1st Year</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="fade-in">
+        <div class="logo">
+            <span style="color: #00D26A; font-weight: bold;">Tech</span><span
+                style="color: #A8C7FA; font-weight: bold;">Scribe</span>
+        </div>
+
+        <button class="hamburger" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html#hero">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#year-selection">Notes</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Year Notes Section -->
+    <section id="year-notes" class="fade-in">
+        <h1>1st Year Notes</h1>
+        <div class="filter-container">
+            <select id="subject-filter">
+                <option value="all">All Subjects</option>
+                <option value="Mathematics I">Mathematics I</option>
+                <option value="Physics">Physics</option>
+                <option value="Python">Python</option>  <!-- Added Python -->
+            </select>
+        </div>
+        
+        <div class="notes-list" id="notes-list">
+            <!-- Mathematics I -->
+            <div class="note-item" data-subject="Mathematics I">
+                <h2>Mathematics I</h2>
+                <div class="pdf-cards">
+                    <div class="pdf-card">
+                        <img src="notes/year1/math1_module1_preview.png" alt="Math1 Module 1 Preview" class="pdf-preview">
+                        <h3>Module 1</h3>
+                        <a href="notes/year1/math1_module1.pdf" class="button" download="Math1_Module1.pdf">Download</a>
+                    </div>
+                    <div class="pdf-card">
+                        <img src="notes/year1/math1_module2_preview.png" alt="Math1 Module 2 Preview" class="pdf-preview">
+                        <h3>Module 2</h3>
+                        <a href="notes/year1/math1_module2.pdf" class="button" download="Math1_Module2.pdf">Download</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Physics -->
+            <div class="note-item" data-subject="Physics">
+                <h2>Physics</h2>
+                <div class="pdf-cards">
+                    <div class="pdf-card">
+                        <img src="notes/year1/physics_module1_preview.png" alt="Physics Module 1 Preview" class="pdf-preview">
+                        <h3>Module 1</h3>
+                        <a href="notes/year1/physics_module1.pdf" class="button" download="Physics_Module1.pdf">Download</a>
+                    </div>
+                    <div class="pdf-card">
+                        <img src="notes/year1/physics_module2_preview.png" alt="Physics Module 2 Preview" class="pdf-preview">
+                        <h3>Module 2</h3>
+                        <a href="notes/year1/physics_module2.pdf" class="button" download="Physics_Module2.pdf">Download</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python (Added Subject) -->
+            <div class="note-item" data-subject="Python">
+                <h2>Python</h2>
+                <div class="pdf-cards">
+                    <div class="pdf-card">
+                        <img src="notes/year1/python_module1_preview.png" alt="Python Module 1 Preview" class="pdf-preview">
+                        <h3>Module 1</h3>
+                        <a href="notes/year1/python_module1.pdf" class="button" download="Python_Module1.pdf">Download</a>
+                    </div>
+                    <div class="pdf-card">
+                        <img src="notes/year1/python_module2_preview.png" alt="Python Module 2 Preview" class="pdf-preview">
+                        <h3>Module 2</h3>
+                        <a href="notes/year1/python_module2.pdf" class="button" download="Python_Module2.pdf">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="no-results" style="display: none;">No results found</div>
+    </section>
+
+    <footer class="fade-in">
+        <p>© 2025 TechScribe. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
